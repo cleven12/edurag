@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - .:/app          # live code reload
+      - ./chroma_db:/app/chroma_db   # persist vector store
+    restart: unless-stopped

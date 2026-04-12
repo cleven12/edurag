@@ -1,0 +1,6 @@
+chroma_db/
+conversations.db
+venv/
+__pycache__/
+*.pyc
+.env
