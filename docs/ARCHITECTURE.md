@@ -1,6 +1,6 @@
 # Architecture
 
-This document describes the current implementation of mw_agent_api.
+This document describes the current implementation of edurag (Reusable RAG API backend for accurate AI assistants in education).
 
 ## System Purpose
 

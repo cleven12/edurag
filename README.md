@@ -1,10 +1,8 @@
-# mw_agent_api
+# edurag
 
-A reusable RAG backend for accurate conversational AI in education.
+Reusable RAG API backend for accurate AI assistants in education. Any institution can integrate via mobile, web, dashboards or other platforms.
 
-This project provides an HTTP API that any educational institution can use to power AI assistants grounded in its own content. It uses retrieval-augmented generation (RAG) with vector embeddings to deliver more accurate and useful responses than generic language models, which often produce inaccurate or low-productivity output in student support, information services, and similar roles.
-
-The API is designed for easy integration into mobile apps, web widgets, chat dashboards, and other platforms. The same pattern can be applied to other sites, such as tourism pages used by tour operators and agencies.
+This project provides a backend API using retrieval-augmented generation (RAG) with vector embeddings. It helps deliver accurate responses from an institution's own content, addressing cases where generic AI produces inaccurate or low-productivity output.
 
 ## Stack
 
@@ -21,7 +19,7 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for component diagrams, request
 ## Project Layout
 
 ```
-mw_agent_api/
+edurag/
 ├── app/
 │   ├── __init__.py      # Flask app factory
 │   ├── routes.py        # HTTP endpoints
@@ -95,7 +93,7 @@ Existing `chroma_db/` is overwritten on run.
 
 ## Using with your institution
 
-To adapt for a different educational institution:
+edurag is designed to be adapted. To use for a different educational institution:
 
 - Update the URL list in `app/ingest.py` (or replace the scraping logic with your own content loader).
 - Edit the system prompt in `app/chatbot.py` to set the correct name, tone, and contact details for the institution.
