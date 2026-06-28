@@ -4,6 +4,9 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 
+# Example list of pages to ingest.
+# Replace these with the target educational institution's public pages
+# (or load content from other sources such as PDFs or a CMS).
 URLS = [
     "https://mwecau.ac.tz/",
     "https://mwecau.ac.tz/about",
@@ -40,7 +43,11 @@ def scrape(url):
         return ""
 
 def build_vectorstore():
-    print("Scraping MWECAU pages...")
+    """Build or rebuild the vector store from the provided pages.
+    This is an example implementation. For a different institution,
+    update the URLS list (or implement a different content loader).
+    """
+    print("Scraping pages for vector store (replace URLs with target institution)...")
     docs = []
     for url in URLS:
         text = scrape(url)

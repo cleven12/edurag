@@ -4,7 +4,7 @@ This document describes the current implementation of mw_agent_api.
 
 ## System Purpose
 
-Provide a retrieval-augmented generation (RAG) HTTP API that answers questions about Mwenge Catholic University (MWECAU) using content scraped from the public website. The assistant identity is "Mweca".
+Provide a retrieval-augmented generation (RAG) HTTP API that any educational institution can use to answer questions based on its own content. The backend uses vector embeddings to ground responses. A specific assistant persona and data source (e.g. scraped pages from one institution) are used as an example.
 
 ## High-Level Components
 
@@ -111,20 +111,7 @@ flowchart TD
 - Embeddings model: `all-MiniLM-L6-v2` (HuggingFaceEmbeddings). Loaded once at import time.
 - Retriever: `vectorstore.as_retriever(search_kwargs={"k": 6})`. Global singleton.
 - Context construction: `"\n\n".join(d.page_content for d in docs)`
-- System prompt template (exact):
-
-```
-You are Mweca, the official assistant for Mwenge Catholic University (MWECAU), Tanzania.
-
-You speak naturally like a helpful university staff member — warm, direct, and conversational.
-
-Rules:
-- Never say "according to the context" ...
-- Never mention that you have a context or documents ...
-- ...
-Context:
-{context}
-```
+- The system prompt is defined in `app/chatbot.py`. It is an example for an educational institution and should be replaced with institution-specific instructions when adapting the system.
 
 - History messages are converted to HumanMessage / AIMessage.
 - New question appended as final HumanMessage.

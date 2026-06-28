@@ -1,20 +1,22 @@
 # mw_agent_api
 
-RAG-based conversational API for Mwenge Catholic University (MWECAU).
+A reusable RAG backend for accurate conversational AI in education.
 
-Mweca is the assistant implementation. It answers questions about the university using retrieved content from the official website.
+This project provides an HTTP API that any educational institution can use to power AI assistants grounded in its own content. It uses retrieval-augmented generation (RAG) with vector embeddings to deliver more accurate and useful responses than generic language models, which often produce inaccurate or low-productivity output in student support, information services, and similar roles.
+
+The API is designed for easy integration into mobile apps, web widgets, chat dashboards, and other platforms. The same pattern can be applied to other sites, such as tourism pages used by tour operators and agencies.
 
 ## Stack
 
 - Python 3 + Flask
-
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for component diagrams, request flows, and module responsibilities.
 - LangChain (langchain-classic, langchain-chroma, langchain-huggingface, langchain-groq, langchain-text-splitters)
 - Groq (llama-3.3-70b-versatile)
 - Hugging Face sentence-transformers (all-MiniLM-L6-v2) for embeddings
 - Chroma vector store (persistent)
 - SQLite for conversation history
 - BeautifulSoup4 + requests for ingestion
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for component diagrams, request flows, and module responsibilities.
 
 ## Project Layout
 
@@ -83,13 +85,23 @@ Volume mounts:
 
 ## Running the Ingest
 
-The ingest script scrapes a hardcoded list of pages and (re)builds `chroma_db/`.
+The ingest script scrapes pages and builds the vector store in `chroma_db/`. The current list of URLs is an example for one institution. Replace it with pages from the target educational institution (or supply your own documents) before running.
 
 ```bash
 python -m app.ingest
 ```
 
 Existing `chroma_db/` is overwritten on run.
+
+## Using with your institution
+
+To adapt for a different educational institution:
+
+- Update the URL list in `app/ingest.py` (or replace the scraping logic with your own content loader).
+- Edit the system prompt in `app/chatbot.py` to set the correct name, tone, and contact details for the institution.
+- Re-run the ingest script to build a fresh vector store.
+
+The resulting `/chat` endpoint can then be called from any client: mobile applications, web widgets, chat dashboards, or other platforms that need reliable AI assistance.
 
 ## API
 
@@ -130,8 +142,8 @@ Response:
 ## Behavior
 
 - Retrieval: Top 6 chunks from Chroma using the question embedding.
-- Context is injected into a fixed system prompt.
-- The system prompt instructs the model (named Mweca) to respond naturally without referencing retrieval or documents.
+- Context is injected into a system prompt.
+- The system prompt instructs the model to respond naturally without referencing retrieval or documents.
 - LLM temperature fixed at 0.3.
 - Per-thread LLM instances to avoid thread-safety issues with ChatGroq under Flask threaded mode.
 - Chat history is trimmed to most recent 10 messages per session (chronological order restored before LLM call).
