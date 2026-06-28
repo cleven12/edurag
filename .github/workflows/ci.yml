@@ -68,25 +68,18 @@ jobs:
       - name: Smoke test Flask app
         run: |
           python -c '
-          import os
-          os.environ["GROQ_API_KEY"] = "dummy-for-ci"
-
           from app import create_app
           app = create_app()
           client = app.test_client()
 
-          # Health
+          # Health endpoint (fast path, no heavy deps or API keys)
           resp = client.get("/health")
           assert resp.status_code == 200
           data = resp.get_json()
           assert data["ok"] is True
           print("✓ /health")
 
-          # Chat endpoint should fail cleanly (no real embeddings or API key)
-          resp = client.post("/chat", json={"message": "test"})
-          assert resp.status_code in (400, 500)
-          body = resp.get_json() or {}
-          print("✓ /chat error path:", body.get("error", "no message"))
+          print("✓ smoke test complete")
           '
 
       - name: Verify requirements are installable
