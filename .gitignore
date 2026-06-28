@@ -2,5 +2,6 @@ chroma_db/
 conversations.db
 venv/
 __pycache__/
+app/__pycache__
 *.pyc
 .env
