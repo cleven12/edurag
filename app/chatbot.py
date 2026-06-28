@@ -8,10 +8,17 @@ import os
 
 load_dotenv()
 
-# Thread-safe: embeddings and vectorstore are read-only after init
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-vectorstore = Chroma(persist_directory="chroma_db", embedding_function=embeddings)
-retriever = vectorstore.as_retriever(search_kwargs={"k": 6})
+# Lazy initialization for embeddings/retriever (heavy: avoids download on import)
+# This keeps fast imports in CI while initializing on first real chat call.
+_retriever = None
+
+def get_retriever():
+    global _retriever
+    if _retriever is None:
+        embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+        vectorstore = Chroma(persist_directory="chroma_db", embedding_function=embeddings)
+        _retriever = vectorstore.as_retriever(search_kwargs={"k": 6})
+    return _retriever
 
 # One LLM instance per thread — ChatGroq is not thread-safe
 _local = threading.local()
@@ -43,7 +50,7 @@ Context:
 {context}"""
 
 def chat(session_id: str, question: str, history: list) -> str:
-    docs = retriever.invoke(question)
+    docs = get_retriever().invoke(question)
     context = "\n\n".join(d.page_content for d in docs)
 
     messages = [SystemMessage(content=SYSTEM_PROMPT.format(context=context))]

@@ -55,9 +55,9 @@ jobs:
           from app.routes import bp
           print('✓ routes')
 
-          # chatbot triggers embeddings + Chroma + torch (expected cost)
-          from app.chatbot import chat, get_llm
-          print('✓ chatbot (RAG stack)')
+          # chatbot import is now lazy (no heavy download until chat() called)
+          from app.chatbot import chat, get_llm, get_retriever
+          print('✓ chatbot (RAG stack, lazy)')
 
           from app.ingest import scrape, build_vectorstore
           print('✓ ingest')
