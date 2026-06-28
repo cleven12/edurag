@@ -52,7 +52,8 @@ Place variables in `.env` (loaded by dotenv in chatbot.py). Copy `.env.example` 
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-```
+
+`requirements.txt` declares CPU-only PyTorch (via PyTorch CPU index) because only the embedding model uses it. The LLM is served by the Groq API.
 
 Create `.env` with `GROQ_API_KEY`.
 
