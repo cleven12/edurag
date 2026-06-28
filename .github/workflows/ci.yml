@@ -24,6 +24,16 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: "pip"
 
+      - name: Cache Hugging Face models (embeddings)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/huggingface
+            ~/.cache/torch
+          key: ${{ runner.os }}-hf-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-hf-
+
       - name: Install dependencies (CPU-only PyTorch)
         run: |
           python -m pip install --upgrade pip
@@ -57,6 +67,9 @@ jobs:
 
       - name: Smoke test Flask app
         run: |
+          # Provide dummy key so ChatGroq can be instantiated (it will fail on actual call)
+          export GROQ_API_KEY=dummy-for-ci
+
           app = create_app()
           client = app.test_client()
 
@@ -67,12 +80,11 @@ jobs:
           assert data["ok"] is True
           print("✓ /health")
 
-          # Chat endpoint basic validation (no real LLM call)
+          # Chat endpoint should fail cleanly without real vectorstore + valid key
           resp = client.post("/chat", json={"message": "test"})
-          # This will likely fail without GROQ_API_KEY + vectorstore,
-          # so we only assert it returns a proper error shape
-          assert resp.status_code in (200, 400, 500)
-          print("✓ /chat endpoint responded")
+          assert resp.status_code in (400, 500)
+          body = resp.get_json() or {}
+          print("✓ /chat error path responded:", body.get("error", "no message"))
 
       - name: Verify requirements are installable
         run: |
