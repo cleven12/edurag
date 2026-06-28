@@ -6,7 +6,37 @@ This document describes the current implementation of edurag (Reusable RAG API b
 
 Provide a retrieval-augmented generation (RAG) HTTP API that any educational institution can use to answer questions based on its own content. The backend uses vector embeddings to ground responses. A specific assistant persona and data source (e.g. scraped pages from one institution) are used as an example.
 
-## High-Level Components
+## High-Level Architecture
+
+```mermaid
+flowchart TB
+    subgraph Institution["Educational Institution"]
+        Content[Content Sources<br/>Website • Documents]
+    end
+
+    Content --> Ingest[Ingestion + Embeddings]
+    Ingest --> Vector[(Vector Store)]
+
+    subgraph edurag["edurag"]
+        API[API<br/>/chat]
+        RAG[RAG Engine]
+    end
+
+    Vector --> RAG
+    API --> RAG
+    RAG --> LLM[LLM Provider]
+
+    Clients[Client Platforms] --> API
+
+    subgraph Clients
+        Web[Web Widget]
+        Mobile[Mobile Apps]
+        Dashboard[Chat Dashboards]
+        Other[Any Platform]
+    end
+```
+
+## Component Breakdown
 
 ```
 ┌─────────────────┐       ┌──────────────────────┐
@@ -29,7 +59,7 @@ Provide a retrieval-augmented generation (RAG) HTTP API that any educational ins
 │                     Chatbot (chatbot.py)                     │
 │  - Global: HuggingFaceEmbeddings + Chroma retriever (k=6)   │
 │  - Per-thread: ChatGroq (llama-3.3-70b-versatile, t=0.3)    │
-│  - Fixed SYSTEM_PROMPT with university persona rules         │
+│  - SYSTEM_PROMPT with institution persona                    │
 │  - Retrieval → context injection → history + question → LLM  │
 └─────────────────────────────────────────────────────────────┘
                                      │

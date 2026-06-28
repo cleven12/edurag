@@ -4,6 +4,14 @@ Reusable RAG API backend for accurate AI assistants in education. Any institutio
 
 This project provides a backend API using retrieval-augmented generation (RAG) with vector embeddings. It helps deliver accurate responses from an institution's own content, addressing cases where generic AI produces inaccurate or low-productivity output.
 
+## High-Level Flow
+
+```mermaid
+flowchart LR
+    Institution[Institution's Content] --> edurag[edurag<br/>RAG + Vector Embeddings]
+    edurag --> Platforms[Mobile Apps • Web Widgets<br/>Chat Dashboards • Other Platforms]
+```
+
 ## Stack
 
 - Python 3 + Flask
