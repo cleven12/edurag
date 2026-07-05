@@ -167,5 +167,4 @@ Response:
 - `conversations.db` is created on first request if missing.
 
 ## License
-
-No license file present in repository.
+ - [MIT License](`https://opensource.org/license/mit`).
