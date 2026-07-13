@@ -1,0 +1,2375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mwenge Catholic University | University in Tanzania</title>
+    <link rel="canonical" href="index.html" />
+    <meta
+      property="og:title"
+      content="Mwenge Catholic University | University in Tanzania"
+    />
+    <meta
+      name="twitter:title"
+      content="Mwenge Catholic University | University in Tanzania"
+    />
+    <meta
+      name="description"
+      content="Mwenge Catholic University (MWECAU) - Lux Mundi, Light of the World. Quality education in Tanzania with undergraduate, postgraduate and non-degree programmes."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Mwenge Catholic University | University in Tanzania"
+      }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/mwecau.png" />
+
+    <!-- Google Fonts: Oswald (headings) + DM Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (Animate on Scroll) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <!-- Splide.js (Premium Carousel) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#513f83",
+              "primary-dark": "#3b2a68",
+              accent: "#e000e7",
+              "accent-hover": "#c000c7",
+            },
+            fontFamily: {
+              heading: ["Oswald", "sans-serif"],
+              body: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "DM Sans", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oswald", sans-serif;
+      }
+      /* Mobile menu animation */
+      .mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .mobile-menu.open {
+        max-height: 100vh;
+      }
+      /* Premium dropdown styles */
+      .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      /* News ticker animation */
+      @keyframes ticker {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .ticker-content {
+        animation: ticker 40s linear infinite;
+      }
+      .ticker-content:hover {
+        animation-play-state: paused;
+      }
+      /* Splide custom styles for fade effect */
+      .splide__slide {
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+      }
+      .splide__slide.is-active {
+        opacity: 1;
+      }
+      /* Partner logo spin animation */
+      @keyframes spin-slow {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+      .partner-logo:hover img {
+        animation: spin-slow 1s ease-in-out;
+      }
+      /* Focus styles for accessibility */
+      a:focus,
+      button:focus {
+        outline: 2px solid #e000e7;
+        outline-offset: 2px;
+      }
+      /* Scroll indicator */
+      .scroll-indicator {
+        animation: bounce 2s infinite;
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0) translateX(-50%);
+        }
+        40% {
+          transform: translateY(-10px) translateX(-50%);
+        }
+        60% {
+          transform: translateY(-5px) translateX(-50%);
+        }
+      }
+      /* Nav link hover effect */
+      .nav-link-premium {
+        position: relative;
+      }
+      .nav-link-premium::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #e000e7;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      .nav-link-premium:hover::after {
+        width: 100%;
+      }
+      /* Card hover lift effect */
+      .card-lift {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(81, 63, 131, 0.15);
+      }
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(135deg, #513f83 0%, #e000e7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    </style>
+  </head>
+
+  <body class="overflow-x-hidden bg-white text-gray-900">
+    <!-- Skip to main content -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-accent text-white px-4 py-2 rounded z-50"
+      >Skip to main content</a
+    >
+
+    <!-- Top Header - Desktop Only -->
+    <header
+      class="hidden lg:block bg-gradient-to-r from-primary to-primary-dark text-white py-4 text-center shadow-lg"
+    >
+      <h1 class="font-heading text-3xl font-bold tracking-wide">
+        Mwenge Catholic University
+      </h1>
+      <p class="italic text-white/90 mt-1">"Lux Mundi - Light of the World"</p>
+    </header>
+
+    <!-- Secondary Nav Bar - Desktop -->
+    <div
+      class="hidden md:flex items-center justify-between bg-primary-dark text-white text-sm px-4 py-2"
+    >
+      <!-- Social Links -->
+      <div class="flex items-center gap-4">
+        <a
+          href="https://www.facebook.com/mwecau2016/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          class="hover:text-accent transition-all duration-300 hover:scale-110"
+        >
+          <i data-lucide="facebook" class="w-5 h-5"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/mwengecatholicuniversity/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          class="hover:text-accent transition-all duration-300 hover:scale-110"
+        >
+          <i data-lucide="instagram" class="w-5 h-5"></i>
+        </a>
+        <a
+          href="https://twitter.com/mwecau1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="X (Twitter)"
+          class="hover:text-accent transition-all duration-300 hover:scale-110"
+        >
+          <i data-lucide="twitter" class="w-5 h-5"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/mwenge-catholic-university/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="hover:text-accent transition-all duration-300 hover:scale-110"
+        >
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+      </div>
+      <!-- Quick Links -->
+      <nav class="flex items-center gap-6" aria-label="Secondary navigation">
+        <a href="gallery.html" class="hover:text-accent transition-colors"
+          >Gallery</a
+        >
+
+        <!-- Timetables Dropdown -->
+        <div class="dropdown relative">
+          <button
+            class="hover:text-accent transition-colors flex items-center gap-1"
+            aria-haspopup="true"
+          >
+            Timetables
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+          <ul
+            class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-48 z-50 border border-gray-100"
+          >
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Postgraduate</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Undergraduate</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Non-degree</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Joining Instructions Dropdown -->
+        <div class="dropdown relative">
+          <button
+            class="hover:text-accent transition-colors flex items-center gap-1"
+            aria-haspopup="true"
+          >
+            Joining Instructions
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+          <ul
+            class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-48 z-50 border border-gray-100"
+          >
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Postgraduate</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Undergraduate</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Non-degree</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Fee Structure Dropdown -->
+        <div class="dropdown relative">
+          <button
+            class="hover:text-accent transition-colors flex items-center gap-1"
+            aria-haspopup="true"
+          >
+            Fee Structure
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+          <ul
+            class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-48 z-50 border border-gray-100"
+          >
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Postgraduate</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Undergraduate</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                target="_blank"
+                class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                >Non-degree</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <a
+          href=""
+          target="_blank"
+          class="hover:text-accent transition-colors"
+          >Almanac</a
+        >
+      </nav>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-primary shadow-xl"
+      aria-label="Main navigation"
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+          <!-- Logo -->
+          <a
+            href="index.html"
+            class="flex items-center gap-3 group"
+            aria-label="MWECAU Home"
+          >
+            <img
+              src="img/mwecau.png"
+              alt="MWECAU Logo"
+              class="h-12 lg:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+            <div class="lg:hidden text-white">
+              <h2 class="font-heading text-lg font-bold leading-tight">
+                Mwenge Catholic University
+              </h2>
+              <p class="text-xs italic text-white/80">
+                "Lux Mundi - Light of the World"
+              </p>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden lg:flex items-center gap-6">
+            <a
+              href="index.html"
+              class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2"
+              >Home</a
+            >
+
+            <!-- About Dropdown -->
+            <div class="dropdown relative">
+              <button
+                class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2 flex items-center gap-1"
+                aria-haspopup="true"
+              >
+                About
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <ul
+                class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-48 z-50 border border-gray-100"
+              >
+                <li>
+                  <a
+                    href="about.html"
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="info" class="w-4 h-4"></i> About
+                    University</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    Academic Staff</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="building-2" class="w-4 h-4"></i>
+                    Administrative Offices</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="book-open" class="w-4 h-4"></i>
+                    Programmes</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Academics Dropdown -->
+            <div class="dropdown relative">
+              <button
+                class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2 flex items-center gap-1"
+                aria-haspopup="true"
+              >
+                Academics
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <ul
+                class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-64 z-50 border border-gray-100"
+              >
+                <li
+                  class="px-4 py-2 font-semibold text-primary border-b flex items-center gap-2"
+                >
+                  <i data-lucide="building" class="w-4 h-4"></i> Faculties
+                </li>
+                <li>
+                  <a
+                    href="faculties/Faculty%20of%20Science.html"
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                    >Faculty of Science (FoS)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                    >Faculty of Humanities &amp; Business (FoHBS)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                    >Faculty of Education (FoE)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                    >Non-Degree Programmes (DNoDP)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                    >Health Center (HC)</a
+                  >
+                </li>
+                <li class="border-t">
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 font-medium flex items-center gap-2"
+                    ><i data-lucide="list" class="w-4 h-4"></i> All
+                    Programmes</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Admission Dropdown -->
+            <div class="dropdown relative">
+              <button
+                class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2 flex items-center gap-1"
+                aria-haspopup="true"
+              >
+                Admission
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <ul
+                class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-48 z-50 border border-gray-100"
+              >
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="info" class="w-4 h-4"></i> Admission
+                    Info</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="book" class="w-4 h-4"></i> Programmes</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 bg-accent text-white hover:bg-accent-hover transition-all duration-200 font-semibold flex items-center gap-2"
+                    ><i data-lucide="pen-line" class="w-4 h-4"></i> Apply Now</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Campuses Dropdown -->
+            <div class="dropdown relative">
+              <button
+                class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2 flex items-center gap-1"
+                aria-haspopup="true"
+              >
+                Campuses
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <ul
+                class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-48 z-50 border border-gray-100"
+              >
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="map-pin" class="w-4 h-4"></i> Msarikie
+                    Campus</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="map-pin" class="w-4 h-4"></i> Hedaru
+                    Campus</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Research Dropdown -->
+            <div class="dropdown relative">
+              <button
+                class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2 flex items-center gap-1"
+                aria-haspopup="true"
+              >
+                Research
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <ul
+                class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-48 z-50 border border-gray-100"
+              >
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="search" class="w-4 h-4"></i> Google
+                    Scholar</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="folder" class="w-4 h-4"></i> Projects</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Services Dropdown -->
+            <div class="dropdown relative">
+              <button
+                class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2 flex items-center gap-1"
+                aria-haspopup="true"
+              >
+                Services
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+              <ul
+                class="dropdown-menu absolute top-full left-0 bg-white text-gray-900 shadow-xl rounded-lg py-2 min-w-48 z-50 border border-gray-100"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="heart-pulse" class="w-4 h-4"></i> Health
+                    Center</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="message-circle" class="w-4 h-4"></i>
+                    Counseling</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 flex items-center gap-2"
+                    ><i data-lucide="library" class="w-4 h-4"></i> Library</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href=""
+              class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2"
+              >Campus Life</a
+            >
+            <a
+              href=""
+              class="nav-link-premium text-white font-medium hover:text-accent transition-colors py-2"
+              >Documents</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="lg:hidden text-white p-2 hover:bg-primary-dark rounded-lg transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobile-menu" class="mobile-menu lg:hidden bg-primary-dark">
+        <div class="px-4 py-4 space-y-2">
+          <a
+            href=""
+            class="block text-white py-3 px-4 rounded-lg hover:bg-accent transition-all duration-200 flex items-center gap-3"
+            ><i data-lucide="home" class="w-5 h-5"></i> Home</a
+          >
+          <a
+            href=""
+            class="block text-white py-3 px-4 rounded-lg hover:bg-accent transition-all duration-200 flex items-center gap-3"
+            ><i data-lucide="info" class="w-5 h-5"></i> About</a
+          >
+          <a
+            href=""
+            class="block text-white py-3 px-4 rounded-lg hover:bg-accent transition-all duration-200 flex items-center gap-3"
+            ><i data-lucide="book-open" class="w-5 h-5"></i> Academics</a
+          >
+          <a
+            href=""
+            class="block text-white py-3 px-4 rounded-lg bg-accent hover:bg-accent-hover transition-all duration-200 font-semibold flex items-center gap-3"
+            ><i data-lucide="pen-line" class="w-5 h-5"></i> Apply Now</a
+          >
+          <a
+            href=""
+            class="block text-white py-3 px-4 rounded-lg hover:bg-accent transition-all duration-200 flex items-center gap-3"
+            ><i data-lucide="users" class="w-5 h-5"></i> Campus Life</a
+          >
+          <a
+            href=""
+            class="block text-white py-3 px-4 rounded-lg hover:bg-accent transition-all duration-200 flex items-center gap-3"
+            ><i data-lucide="library" class="w-5 h-5"></i> Library</a
+          >
+          <a
+            href=""
+            class="block text-white py-3 px-4 rounded-lg hover:bg-accent transition-all duration-200 flex items-center gap-3"
+            ><i data-lucide="image" class="w-5 h-5"></i> Gallery</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- News Ticker -->
+    <div
+      class="bg-primary text-white border-t border-white/20 flex items-center overflow-hidden"
+    >
+      <div class="flex-1 overflow-hidden py-2">
+        <div class="ticker-content whitespace-nowrap flex items-center gap-8">
+          <span class="font-bold text-accent flex items-center gap-2"
+            ><i data-lucide="bell" class="w-4 h-4"></i> Latest News:</span
+          >
+          <a
+            href=""
+            class="hover:text-accent transition-colors"
+            >VACANCY ANNOUNCEMENT Mwenge Catholic University - Hedaru Campus
+            College</a
+          >
+          <span class="font-bold text-accent flex items-center gap-2"
+            ><i data-lucide="calendar" class="w-4 h-4"></i> Upcoming
+            Events:</span
+          >
+          <a
+            href=""
+            class="hover:text-accent transition-colors"
+            >Joint 6th MWECAU 30th SSSEA International Conference 29.09 to
+            03.10.2025</a
+          >
+          <span class="font-bold text-accent flex items-center gap-2"
+            ><i data-lucide="calendar" class="w-4 h-4"></i> Upcoming
+            Events:</span
+          >
+          <a
+            href=""
+            class="hover:text-accent transition-colors"
+            >Field Practical Training</a
+          >
+          <!-- Duplicate for seamless loop -->
+          <span class="font-bold text-accent flex items-center gap-2"
+            ><i data-lucide="bell" class="w-4 h-4"></i> Latest News:</span
+          >
+          <a
+            href=""
+            class="hover:text-accent transition-colors"
+            >VACANCY ANNOUNCEMENT Mwenge Catholic University - Hedaru Campus
+            College</a
+          >
+          <span class="font-bold text-accent flex items-center gap-2"
+            ><i data-lucide="calendar" class="w-4 h-4"></i> Upcoming
+            Events:</span
+          >
+          <a
+            href=""
+            class="hover:text-accent transition-colors"
+            >Joint 6th MWECAU 30th SSSEA International Conference 29.09 to
+            03.10.2025</a
+          >
+        </div>
+      </div>
+      <a
+        href=""
+        class="hidden md:flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold py-3 px-6 transition-all duration-300"
+      >
+        <i data-lucide="pen-line" class="w-5 h-5"></i> Apply Now
+      </a>
+    </div>
+
+    <main id="main-content">
+      <!-- Hero Image Slider with Splide.js -->
+      <section class="relative" aria-label="Featured announcements">
+        <div id="hero-splide" class="splide" aria-label="MWECAU Hero Slider">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img
+                  src=""
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  alt="Application window"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  src=""
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  alt="From the Foot of Mount Kilimanjaro to Zanzibar"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  src=""
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  alt="Key Stakeholders Meeting"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  src=""
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  alt="PSPTB yatoa elimu kwa wanafunzi MWECAU"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  src=""
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  alt="Internal Moot Court Competition"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  src=""
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  alt="Apply Now"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  src=""
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  alt="New cognates For Education Degree Programmes"
+                />
+              </li>
+              <li class="splide__slide">
+                <img
+                  src=""
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                  alt="Application window"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div
+          class="scroll-indicator absolute bottom-8 left-1/2 text-white bg-primary/60 p-3 rounded-full backdrop-blur-sm cursor-pointer hover:bg-primary transition-colors"
+          onclick="
+            document
+              .getElementById('welcome-section')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+        >
+          <i data-lucide="chevron-down" class="w-6 h-6"></i>
+        </div>
+      </section>
+
+      <!-- Welcome Section -->
+      <section id="welcome-section" class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 items-start"
+          >
+            <!-- VC Photo -->
+            <div
+              class="text-center"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              <img
+                src=""
+                alt="Rev. Prof. Philbert Vumilia, Vice Chancellor"
+                class="w-48 h-auto mx-auto rounded-xl shadow-xl border-4 border-primary/20 hover:border-accent transition-colors duration-300"
+              />
+              <div class="mt-4">
+                <p class="font-heading font-semibold text-lg text-primary">
+                  Rev. Prof. Philbert Vumilia
+                </p>
+                <p class="text-gray-600">Vice Chancellor</p>
+              </div>
+            </div>
+
+            <!-- Welcome Message -->
+            <div
+              class="lg:col-span-3"
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
+              <h2
+                class="font-heading text-3xl lg:text-4xl font-bold text-primary mb-6"
+              >
+                Welcome to Mwenge Catholic University
+              </h2>
+              <div
+                class="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+              >
+                <p>
+                  <strong
+                    >Welcome to Mwenge Catholic University (MWECAU),</strong
+                  >
+                  a University that gives you the opportunity to pursue quality
+                  education in truthfulness and freedom of thought, so that you
+                  may gain professional competency to boldly serve and
+                  contribute to the development of humanity. In order to prepare
+                  for your future career or pursue academic and professional
+                  advancement, be it education, administration, sciences, law
+                  and/or social sciences, think of MWECAU as your best choice.
+                </p>
+                <p class="mt-4">
+                  Our community is being called to reimagine the future. As the
+                  only university where a renowned design school comes together
+                  with premier colleges, we are making learning more relevant
+                  and transformational. We are enriched by the wide range of
+                  experiences and perspectives of our students, faculty, staff
+                  and alumni.
+                </p>
+              </div>
+              <a
+                href=""
+                class="inline-flex items-center gap-2 mt-6 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:translate-x-2"
+              >
+                Read More
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest News Section -->
+      <section class="py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <h2
+            class="font-heading text-3xl lg:text-4xl font-bold text-primary mb-12 text-center"
+            data-aos="fade-up"
+          >
+            Latest News and Updates
+          </h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Featured News -->
+            <article
+              class="card-lift bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-primary"
+              data-aos="fade-right"
+              data-aos-duration="800"
+            >
+              <img
+                src=""
+                alt="Latest news"
+                class="w-full h-64 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="font-heading text-xl font-bold text-primary mb-3">
+                  <a
+                    href=""
+                    class="hover:text-accent transition-colors"
+                  >
+                    VACANCY ANNOUNCEMENT Mwenge Catholic University - Hedaru
+                    Campus College
+                  </a>
+                </h3>
+                <p class="text-gray-600">
+                  Mwenge Catholic University-Hedaru Campus College is seeking
+                  qualified candidates...
+                </p>
+              </div>
+            </article>
+
+            <!-- Other News List -->
+            <div
+              data-aos="fade-left"
+              data-aos-duration="800"
+              data-aos-delay="200"
+            >
+              <h3
+                class="font-heading text-xl font-bold text-primary mb-4 flex items-center gap-2"
+              >
+                <i data-lucide="newspaper" class="w-5 h-5"></i> Other University
+                Updates
+              </h3>
+              <div class="space-y-4">
+                <article
+                  class="card-lift bg-white rounded-lg shadow p-4 border-l-4 border-accent"
+                >
+                  <a
+                    href=""
+                    class="font-semibold text-primary hover:text-accent transition-colors"
+                  >
+                    VACANCY ANNOUNCEMENT Mwenge Catholic University - Hedaru
+                    Campus College
+                  </a>
+                  <p class="text-sm text-gray-500 mt-1 flex items-center gap-1">
+                    <i data-lucide="calendar" class="w-3 h-3"></i> 2026-02-06
+                  </p>
+                </article>
+                <article
+                  class="card-lift bg-white rounded-lg shadow p-4 border-l-4 border-accent"
+                >
+                  <a
+                    href=""
+                    class="font-semibold text-primary hover:text-accent transition-colors"
+                  >
+                    VACANCY ANNOUNCEMENT
+                  </a>
+                  <p class="text-sm text-gray-500 mt-1 flex items-center gap-1">
+                    <i data-lucide="calendar" class="w-3 h-3"></i> 2026-01-27
+                  </p>
+                </article>
+                <article
+                  class="card-lift bg-white rounded-lg shadow p-4 border-l-4 border-accent"
+                >
+                  <a
+                    href=""
+                    class="font-semibold text-primary hover:text-accent transition-colors"
+                  >
+                    PRESS RELEASE - ACADEMIC PROMOTIONS II
+                  </a>
+                  <p class="text-sm text-gray-500 mt-1 flex items-center gap-1">
+                    <i data-lucide="calendar" class="w-3 h-3"></i> 2025-11-05
+                  </p>
+                </article>
+                <article
+                  class="card-lift bg-white rounded-lg shadow p-4 border-l-4 border-accent"
+                >
+                  <a
+                    href=""
+                    class="font-semibold text-primary hover:text-accent transition-colors"
+                  >
+                    Publication of the 2024-2025 Supplementary &amp; Special
+                    Examination Results
+                  </a>
+                  <p class="text-sm text-gray-500 mt-1 flex items-center gap-1">
+                    <i data-lucide="calendar" class="w-3 h-3"></i> 2025-10-28
+                  </p>
+                </article>
+              </div>
+              <a
+                href=""
+                class="inline-flex items-center gap-2 mt-6 bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:translate-x-2"
+              >
+                View All News
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose MWECAU -->
+      <section class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+          <h2
+            class="font-heading text-3xl lg:text-4xl font-bold mb-4"
+            data-aos="fade-up"
+          >
+            Why Choose <span class="gradient-text">MWECAU</span>
+          </h2>
+          <p
+            class="text-gray-600 mb-12 max-w-2xl mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            We are one of the most robust and diverse universities in Tanzania.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Academics Card -->
+            <article
+              class="card-lift bg-white rounded-xl shadow-lg p-8 border-t-4 border-primary"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i data-lucide="users" class="w-8 h-8 text-primary"></i>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-primary mb-4">
+                Academics
+              </h3>
+              <p class="text-gray-600 mb-6">
+                At Mwenge Catholic University, inspiring academic learning is
+                fostered through a rigorous curriculum that emphasizes critical
+                thinking, research, and practical application.
+              </p>
+              <a
+                href="academics.html"
+                class="inline-flex items-center gap-2 text-primary hover:text-accent font-semibold transition-all duration-300 hover:translate-x-2"
+              >
+                Read More
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </a>
+            </article>
+
+            <!-- Student Life Card -->
+            <article
+              class="card-lift bg-white rounded-xl shadow-lg p-8 border-t-4 border-accent"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <div
+                class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i data-lucide="building-2" class="w-8 h-8 text-accent"></i>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-primary mb-4">
+                Inspiring Student Life
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Our residential systems and facilities create more opportunities
+                for learning with peers and professors from different
+                backgrounds.
+              </p>
+              <a
+                href="campus-life.html"
+                class="inline-flex items-center gap-2 text-primary hover:text-accent font-semibold transition-all duration-300 hover:translate-x-2"
+              >
+                Read More
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </a>
+            </article>
+
+            <!-- Qualified Staff Card -->
+            <article
+              class="card-lift bg-white rounded-xl shadow-lg p-8 border-t-4 border-primary"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6"
+              >
+                <i
+                  data-lucide="graduation-cap"
+                  class="w-8 h-8 text-primary"
+                ></i>
+              </div>
+              <h3 class="font-heading text-2xl font-bold text-primary mb-4">
+                Qualified Staff
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Mwenge Catholic University is supported by over 200 highly
+                qualified academic and administrative staff, dedicated to
+                providing quality education and services.
+              </p>
+              <a
+                href=""
+                class="inline-flex items-center gap-2 text-primary hover:text-accent font-semibold transition-all duration-300 hover:translate-x-2"
+              >
+                Read More
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action Banner -->
+      <section
+        class="py-20 lg:py-28 bg-gradient-to-r from-primary via-primary-dark to-primary text-white text-center relative overflow-hidden"
+      >
+        <div class="absolute inset-0 opacity-10">
+          <div
+            class="absolute top-0 left-0 w-72 h-72 bg-accent rounded-full filter blur-3xl"
+          ></div>
+          <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-accent rounded-full filter blur-3xl"
+          ></div>
+        </div>
+        <div
+          class="max-w-4xl mx-auto px-4 relative z-10"
+          data-aos="zoom-in"
+          data-aos-duration="800"
+        >
+          <h2
+            class="font-heading text-3xl lg:text-5xl font-bold mb-4 uppercase"
+          >
+            We are Mwenge Catholic University
+          </h2>
+          <p class="text-xl lg:text-2xl mb-8 text-white/90">
+            We are Different. We make learning more relevant and
+            transformational.
+          </p>
+          <a
+            href=""
+            target="_blank"
+            class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 hover:scale-105 shadow-lg"
+          >
+            <i data-lucide="pen-line" class="w-5 h-5"></i>
+            Call for Application 2025/2026
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Study at MWECAU -->
+      <section class="py-16 lg:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+          <h2
+            class="font-heading text-3xl lg:text-4xl font-bold text-primary mb-2"
+            data-aos="fade-up"
+          >
+            Study at Mwenge Catholic University
+          </h2>
+          <p
+            class="text-xl text-gray-600 mb-2"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Leaders in a complex world
+          </p>
+          <p
+            class="italic text-gray-500 mb-12"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            "Lux Mundi" - Light of the world
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Non-Degree -->
+            <article
+              class="card-lift bg-white rounded-xl shadow-lg overflow-hidden border-b-4 border-primary group"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="images/pageImages/1727968653-BANNER-NDOGO-cccc.jpg"
+                  alt="Non-Degree Admissions"
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="font-heading text-xl font-bold text-primary mb-3">
+                  Non-Degree Admissions
+                </h3>
+                <p class="text-gray-600 mb-6">
+                  Whatever you&apos;re seeking from your college experience,
+                  you&apos;ll find it at Mwenge Catholic University.
+                </p>
+                <a
+                  href=""
+                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                >
+                  <i data-lucide="book" class="w-4 h-4"></i> Non-Degree
+                </a>
+              </div>
+            </article>
+
+            <!-- Undergraduate -->
+            <article
+              class="card-lift bg-white rounded-xl shadow-lg overflow-hidden border-b-4 border-accent group"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="images/pageImages/1724788003-LXKC1912.JPG"
+                  alt="Undergraduate Admissions"
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="font-heading text-xl font-bold text-primary mb-3">
+                  Undergraduate Admissions
+                </h3>
+                <p class="text-gray-600 mb-6">
+                  Whatever you&apos;re seeking from your college experience,
+                  you&apos;ll find it at Mwenge Catholic University.
+                </p>
+                <a
+                  href="programs/undergraduate.html"
+                  class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                >
+                  <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                  Undergraduate
+                </a>
+              </div>
+            </article>
+
+            <!-- Postgraduate -->
+            <article
+              class="card-lift bg-white rounded-xl shadow-lg overflow-hidden border-b-4 border-primary group"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="overflow-hidden">
+                <img
+                  src="images/pageImages/1727709436-POSTGRADUATE.jpg"
+                  alt="Postgraduate Admissions"
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="font-heading text-xl font-bold text-primary mb-3">
+                  Postgraduate Admissions
+                </h3>
+                <p class="text-gray-600 mb-6">
+                  Whatever you&apos;re seeking from your college experience,
+                  you&apos;ll find it at Mwenge Catholic University.
+                </p>
+                <a
+                  href="programs/post-graduate.html"
+                  class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                >
+                  <i data-lucide="award" class="w-4 h-4"></i> Postgraduate
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Events -->
+      <section class="py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+          <h2
+            class="font-heading text-3xl lg:text-4xl font-bold text-primary mb-12"
+            data-aos="fade-up"
+          >
+            Upcoming Events
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Event 1 -->
+            <a
+              href=""
+              class="card-lift block bg-white rounded-xl shadow-lg overflow-hidden group"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <div
+                class="p-6 flex justify-center bg-gradient-to-br from-primary/5 to-accent/5"
+              >
+                <img
+                  src="img/mwecau.png"
+                  alt="MWECAU Logo"
+                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-4 border-t">
+                <h3
+                  class="font-heading text-sm font-bold text-primary mb-2 group-hover:text-accent transition-colors"
+                >
+                  Joint 6th MWECAU 30th SSSEA International Conference
+                </h3>
+                <p
+                  class="text-sm text-gray-500 italic flex items-center justify-center gap-1"
+                >
+                  <i data-lucide="calendar" class="w-3 h-3"></i> 2025-05-03
+                </p>
+              </div>
+            </a>
+
+            <!-- Event 2 -->
+            <a
+              href=""
+              class="card-lift block bg-white rounded-xl shadow-lg overflow-hidden group"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="p-6 flex justify-center bg-gradient-to-br from-primary/5 to-accent/5"
+              >
+                <img
+                  src="img/mwecau.png"
+                  alt="MWECAU Logo"
+                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-4 border-t">
+                <h3
+                  class="font-heading text-sm font-bold text-primary mb-2 group-hover:text-accent transition-colors"
+                >
+                  Field Practical Training
+                </h3>
+                <p
+                  class="text-sm text-gray-500 italic flex items-center justify-center gap-1"
+                >
+                  <i data-lucide="calendar" class="w-3 h-3"></i> 2025-03-10
+                </p>
+              </div>
+            </a>
+
+            <!-- Event 3 -->
+            <a
+              href=""
+              class="card-lift block bg-white rounded-xl shadow-lg overflow-hidden group"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="p-6 flex justify-center bg-gradient-to-br from-primary/5 to-accent/5"
+              >
+                <img
+                  src="img/mwecau.png"
+                  alt="MWECAU Logo"
+                  class="w-20 h-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-4 border-t">
+                <h3
+                  class="font-heading text-sm font-bold text-primary mb-2 group-hover:text-accent transition-colors"
+                >
+                  University Examinations
+                </h3>
+                <p
+                  class="text-sm text-gray-500 italic flex items-center justify-center gap-1"
+                >
+                  <i data-lucide="calendar" class="w-3 h-3"></i> 2025-01-31
+                </p>
+              </div>
+            </a>
+
+            <!-- Event 4 -->
+            <a
+              href="https://mwecau.ac.tz/Opening%202024/2025%20Academic%20Year/event"
+              class="card-lift block bg-white rounded-xl shadow-lg overflow-hidden group"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="p-6 bg-gradient-to-br from-primary/5 to-accent/5">
+                <img
+                  src="images/eventImages/1727250683-ACADEMIC.jpg"
+                  alt="Opening of Academic Year"
+                  class="w-full h-24 object-cover rounded group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-4 border-t">
+                <h3
+                  class="font-heading text-sm font-bold text-primary mb-2 group-hover:text-accent transition-colors"
+                >
+                  Opening of 2024/2025 Academic Year
+                </h3>
+                <p
+                  class="text-sm text-gray-500 italic flex items-center justify-center gap-1"
+                >
+                  <i data-lucide="calendar" class="w-3 h-3"></i> 2024-10-07
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <a
+            href="university-events.html"
+            class="inline-flex items-center gap-2 mt-10 bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:translate-x-2"
+            data-aos="fade-up"
+          >
+            More MWECAU Events
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Gallery with Splide Carousel -->
+      <section class="py-12 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4" data-aos="fade-up">
+          <div id="gallery-splide" class="splide" aria-label="MWECAU Gallery">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide px-2">
+                  <img
+                    src="images/pageImages/1726238173-0J3A0442MWECAU.JPG"
+                    alt="MWECAU Campus"
+                    class="w-full h-40 lg:h-56 object-cover rounded-lg"
+                  />
+                </li>
+                <li class="splide__slide px-2">
+                  <img
+                    src="images/pageImages/1726238124-0J3A0411MWECAU.JPG"
+                    alt="MWECAU Campus"
+                    class="w-full h-40 lg:h-56 object-cover rounded-lg"
+                  />
+                </li>
+                <li class="splide__slide px-2">
+                  <img
+                    src="images/pageImages/1726237832-uni.jpg"
+                    alt="MWECAU Campus"
+                    class="w-full h-40 lg:h-56 object-cover rounded-lg"
+                  />
+                </li>
+                <li class="splide__slide px-2">
+                  <img
+                    src="images/pageImages/1726232451-0J3A0402MWECAU.JPG"
+                    alt="MWECAU Campus"
+                    class="w-full h-40 lg:h-56 object-cover rounded-lg"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Partner Institutions with Spinning Logos -->
+      <section class="py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+          <h2
+            class="font-heading text-3xl lg:text-4xl font-bold text-primary mb-12"
+            data-aos="fade-up"
+          >
+            Partner Institutions
+          </h2>
+
+          <div
+            class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-6 items-center"
+          >
+            <a
+              href="https://www.agrolab.us/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="0"
+            >
+              <img
+                src="images/pageImages/1726233046-agroLab.png"
+                alt="AgroLab"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.ternet.or.tz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="50"
+            >
+              <img
+                src="images/pageImages/1726236905-ternet.png"
+                alt="TERNET"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.tfs.go.tz/index.php/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <img
+                src="images/pageImages/1726236966-misitu.png"
+                alt="Tanzania Forest Services"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.uniservitate.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="150"
+            >
+              <img
+                src="images/pageImages/1726237007-univervitate.jpg"
+                alt="Uniservitate"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.mic.ul.ie/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <img
+                src="images/pageImages/1726237051-MIC.png"
+                alt="MIC"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.misereor.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="250"
+            >
+              <img
+                src="images/pageImages/1726237094-misereor.png"
+                alt="Misereor"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.porticus.com/en/home"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <img
+                src="images/pageImages/1726237140-porticus.png"
+                alt="Porticus"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.walsh.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="350"
+            >
+              <img
+                src="images/pageImages/1726237174-walsh%20university.png"
+                alt="Walsh University"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.kuleuven.be/english/kuleuven/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="400"
+            >
+              <img
+                src="images/pageImages/1726237262-logo.svg"
+                alt="KU Leuven"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://unik.ac.ug/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="450"
+            >
+              <img
+                src=""
+                alt="UNIK"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.inn.no/english/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="500"
+            >
+              <img
+                src=""
+                alt="INN University"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.tuas.fi/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="550"
+            >
+              <img
+                src=""
+                alt="Turku AMK"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              class="partner-logo bg-white p-4 rounded-xl shadow hover:shadow-xl transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="600"
+            >
+              <img
+                src=""
+                alt="SUSIE"
+                class="h-12 w-auto mx-auto object-contain"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark text-white">
+      <!-- Social Media Bar -->
+      <div class="bg-primary py-4 px-4">
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <p class="font-semibold">Get connected with us on social networks:</p>
+          <div class="flex items-center gap-6">
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="hover:text-accent transition-all duration-300 hover:scale-125"
+            >
+              <i data-lucide="facebook" class="w-7 h-7"></i>
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X (Twitter)"
+              class="hover:text-accent transition-all duration-300 hover:scale-125"
+            >
+              <i data-lucide="twitter" class="w-7 h-7"></i>
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="hover:text-accent transition-all duration-300 hover:scale-125"
+            >
+              <i data-lucide="instagram" class="w-7 h-7"></i>
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="hover:text-accent transition-all duration-300 hover:scale-125"
+            >
+              <i data-lucide="linkedin" class="w-7 h-7"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Content -->
+      <div class="max-w-7xl mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Social Links Column -->
+          <div>
+            <img
+              src=""
+              alt="MWECAU Logo"
+              class="h-20 w-auto mb-4"
+            />
+            <h3
+              class="font-heading text-lg font-bold mb-4 flex items-center gap-2"
+            >
+              <i data-lucide="share-2" class="w-5 h-5"></i> Social Links
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-accent transition-colors flex items-center gap-2"
+                  ><i data-lucide="facebook" class="w-4 h-4"></i> Facebook</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-accent transition-colors flex items-center gap-2"
+                  ><i data-lucide="twitter" class="w-4 h-4"></i> Twitter</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-accent transition-colors flex items-center gap-2"
+                  ><i data-lucide="instagram" class="w-4 h-4"></i> Instagram</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-accent transition-colors flex items-center gap-2"
+                  ><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Documents Column -->
+          <div>
+            <h3
+              class="font-heading text-lg font-bold mb-4 flex items-center gap-2"
+            >
+              <i data-lucide="file-text" class="w-5 h-5"></i> Documents
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href=""
+                  target="_blank"
+                  class="hover:text-accent transition-colors"
+                  >Almanac</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  target="_blank"
+                  class="hover:text-accent transition-colors"
+                  >Fee Structure</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  target="_blank"
+                  class="hover:text-accent transition-colors"
+                  >Timetables</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  target="_blank"
+                  class="hover:text-accent transition-colors"
+                  >Joining Instructions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Popular Links Column -->
+          <div>
+            <h3
+              class="font-heading text-lg font-bold mb-4 flex items-center gap-2"
+            >
+              <i data-lucide="link" class="w-5 h-5"></i> Popular Links
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href=""
+                  class="hover:text-accent transition-colors"
+                  >Programmes</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  target="_blank"
+                  class="hover:text-accent transition-colors"
+                  >Apply Now</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="hover:text-accent transition-colors"
+                  >Campus Life</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="hover:text-accent transition-colors"
+                  >Library</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="hover:text-accent transition-colors"
+                  >Gallery</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Column -->
+          <div>
+            <h3
+              class="font-heading text-lg font-bold mb-4 flex items-center gap-2"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i> Contact Us
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2">
+                <i
+                  data-lucide="map-pin"
+                  class="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
+                ></i>
+                <span>P.O Box 1226, Moshi, Tanzania</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i
+                  data-lucide="phone"
+                  class="w-5 h-5 text-accent flex-shrink-0"
+                ></i>
+                <a
+                  href="tel:+255272751999"
+                  class="hover:text-accent transition-colors"
+                  >+255 27 275 1999</a
+                >
+              </li>
+              <li class="flex items-center gap-2">
+                <i
+                  data-lucide="mail"
+                  class="w-5 h-5 text-accent flex-shrink-0"
+                ></i>
+                <a
+                  href="mailto:info@mwecau.ac.tz"
+                  class="hover:text-accent transition-colors"
+                  >info@mwecau.ac.tz</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t border-white/20 py-6 px-4 text-center">
+        <p class="text-white/80">
+          &copy; 2025 Mwenge Catholic University. All Rights Reserved. |
+          Designed with
+          <i data-lucide="heart" class="w-4 h-4 inline text-accent"></i> for
+          Education
+        </p>
+      </div>
+    </footer>
+
+    <!-- MWECAU Chat Widget — paste before </body> -->
+    <style>
+      #mweca-btn {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 9999;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #1a3c6e;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+      }
+      #mweca-btn:hover {
+        transform: scale(1.08);
+      }
+      #mweca-btn svg {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+      }
+
+      #mweca-box {
+        position: fixed;
+        bottom: 90px;
+        right: 24px;
+        z-index: 9999;
+        width: 340px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        font-family: sans-serif;
+        font-size: 14px;
+        display: none;
+        flex-direction: column;
+        background: #fff;
+      }
+      #mweca-box.open {
+        display: flex;
+      }
+
+      #mweca-header {
+        background: #1a3c6e;
+        color: #fff;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      #mweca-header .info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      #mweca-header .avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #1a3c6e;
+        font-size: 14px;
+      }
+      #mweca-header .name {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      #mweca-header .sub {
+        font-size: 11px;
+        opacity: 0.75;
+      }
+      #mweca-close {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        line-height: 1;
+      }
+
+      #mweca-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-height: 280px;
+        max-height: 380px;
+        background: #f5f6fa;
+      }
+
+      .mweca-msg {
+        max-width: 82%;
+        padding: 9px 12px;
+        border-radius: 10px;
+        line-height: 1.5;
+      }
+      .mweca-msg.bot {
+        align-self: flex-start;
+        background: #fff;
+        color: #222;
+        border: 1px solid #e5e7eb;
+        border-radius: 2px 10px 10px 10px;
+      }
+      .mweca-msg.user {
+        align-self: flex-end;
+        background: #1a3c6e;
+        color: #fff;
+        border-radius: 10px 2px 10px 10px;
+      }
+      .mweca-msg.typing {
+        color: #888;
+        font-style: italic;
+      }
+
+      #mweca-input-row {
+        display: flex;
+        gap: 8px;
+        padding: 10px 12px;
+        border-top: 1px solid #e5e7eb;
+        background: #fff;
+      }
+      #mweca-input {
+        flex: 1;
+        padding: 8px 12px;
+        border: 1px solid #d1d5db;
+        border-radius: 20px;
+        outline: none;
+        font-size: 13px;
+        font-family: sans-serif;
+      }
+      #mweca-input:focus {
+        border-color: #1a3c6e;
+      }
+      #mweca-send {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #1a3c6e;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      #mweca-send svg {
+        width: 16px;
+        height: 16px;
+        fill: #fff;
+      }
+      #mweca-send:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      #mweca-clear {
+        font-size: 11px;
+        color: #888;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0 12px 8px;
+        text-align: right;
+        display: block;
+        width: 100%;
+      }
+      #mweca-clear:hover {
+        color: #1a3c6e;
+      }
+    </style>
+
+    <!-- Toggle button -->
+    <button id="mweca-btn" aria-label="Chat with Mweca">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z" />
+      </svg>
+    </button>
+
+    <!-- Chat box -->
+    <div id="mweca-box" role="dialog" aria-label="MWECAU Assistant">
+      <div id="mweca-header">
+        <div class="info">
+          <div class="avatar">M</div>
+          <div>
+            <div class="name">𝓒𝓵𝓪𝓿𝓮𝓷𝓲𝓾𝓼</div>
+            <div class="sub">MWECAU Assistant</div>
+          </div>
+        </div>
+        <button id="mweca-close" aria-label="Close">&#x2715;</button>
+      </div>
+
+      <div id="mweca-messages">
+        <div class="mweca-msg bot">
+          Hi! I'm 𝓒𝓵𝓪𝓿𝓮𝓷𝓲𝓾𝓼, your MWECAU guide. Ask me anything about programs,
+          admissions, or campus life.
+        </div>
+      </div>
+
+      <button id="mweca-clear">Clear conversation</button>
+
+      <div id="mweca-input-row">
+        <input
+          id="mweca-input"
+          type="text"
+          placeholder="Ask something..."
+          autocomplete="off"
+        />
+        <button id="mweca-send">
+          <svg viewBox="0 0 24 24">
+            <path d="M2 21l21-9L2 3v7l15 2-15 2z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const API = "http:localhost:xxx/chat";
+        const STORAGE_KEY = "mweca_session";
+
+        let sessionId = localStorage.getItem(STORAGE_KEY) || null;
+
+        const box = document.getElementById("mweca-box");
+        const btn = document.getElementById("mweca-btn");
+        const closeBtn = document.getElementById("mweca-close");
+        const messages = document.getElementById("mweca-messages");
+        const input = document.getElementById("mweca-input");
+        const send = document.getElementById("mweca-send");
+        const clearBtn = document.getElementById("mweca-clear");
+
+        btn.addEventListener("click", () => {
+          box.classList.toggle("open");
+          if (box.classList.contains("open")) input.focus();
+        });
+        closeBtn.addEventListener("click", () => box.classList.remove("open"));
+
+        function addMsg(role, text) {
+          const div = document.createElement("div");
+          div.className = "mweca-msg " + role;
+          div.textContent = text;
+          messages.appendChild(div);
+          messages.scrollTop = messages.scrollHeight;
+          return div;
+        }
+
+        function setLoading(on) {
+          send.disabled = on;
+          input.disabled = on;
+        }
+
+        async function sendMessage() {
+          const q = input.value.trim();
+          if (!q) return;
+
+          addMsg("user", q);
+          input.value = "";
+          setLoading(true);
+
+          const typing = addMsg("bot typing", "𝓒𝓵𝓪𝓿𝓮𝓷𝓲𝓾𝓼 is typing...");
+
+          try {
+            const body = { message: q };
+            if (sessionId) body.session_id = sessionId;
+
+            const res = await fetch(API, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(body),
+            });
+
+            const data = await res.json();
+            typing.remove();
+
+            if (data.ok) {
+              sessionId = data.session_id;
+              localStorage.setItem(STORAGE_KEY, sessionId);
+              addMsg("bot", data.message.content);
+            } else {
+              addMsg("bot", "Sorry, something went wrong. Try again.");
+            }
+          } catch (e) {
+            typing.remove();
+            addMsg(
+              "bot",
+              "Can't reach the server right now. Please try again later.",
+            );
+          }
+
+          setLoading(false);
+          input.focus();
+        }
+
+        send.addEventListener("click", sendMessage);
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") sendMessage();
+        });
+
+        clearBtn.addEventListener("click", () => {
+          sessionId = null;
+          localStorage.removeItem(STORAGE_KEY);
+          messages.innerHTML = "";
+          addMsg("bot", "Conversation cleared. How can I help you?");
+        });
+      })();
+    </script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 50,
+      });
+
+      // Initialize Hero Splide with fade effect
+      new Splide("#hero-splide", {
+        type: "fade",
+        rewind: true,
+        autoplay: true,
+        interval: 5000,
+        pauseOnHover: true,
+        arrows: true,
+        pagination: true,
+        speed: 1000,
+        classes: {
+          arrows:
+            "splide__arrows absolute inset-0 flex items-center justify-between px-4 pointer-events-none",
+          arrow:
+            "splide__arrow bg-primary/80 hover:bg-primary text-white p-3 rounded-full transition-all duration-300 pointer-events-auto hover:scale-110",
+          prev: "splide__arrow--prev",
+          next: "splide__arrow--next",
+          pagination:
+            "splide__pagination absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2",
+          page: "splide__pagination__page w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors",
+        },
+      }).mount();
+
+      // Initialize Gallery Splide
+      new Splide("#gallery-splide", {
+        type: "loop",
+        perPage: 4,
+        perMove: 1,
+        autoplay: true,
+        interval: 3000,
+        pauseOnHover: true,
+        gap: "1rem",
+        arrows: false,
+        pagination: false,
+        breakpoints: {
+          1024: { perPage: 3 },
+          768: { perPage: 2 },
+          480: { perPage: 1 },
+        },
+      }).mount();
+
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        mobileMenuBtn.setAttribute("aria-expanded", isOpen);
+        menuIcon.setAttribute("data-lucide", isOpen ? "x" : "menu");
+        lucide.createIcons();
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (
+          !mobileMenuBtn.contains(e.target) &&
+          !mobileMenu.contains(e.target)
+        ) {
+          mobileMenu.classList.remove("open");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+          menuIcon.setAttribute("data-lucide", "menu");
+          lucide.createIcons();
+        }
+      });
+    </script>
+  </body>
+</html>
