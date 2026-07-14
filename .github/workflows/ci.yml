@@ -25,7 +25,7 @@ jobs:
           cache: "pip"
 
       - name: Cache Hugging Face models (embeddings)
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             ~/.cache/huggingface
