@@ -1,8 +1,30 @@
-# edurag
+<h1 align="center">EduRAG</h1>
+<p align="center">
+Reusable Retrieval-Augmented Generation (RAG) backend for educational AI assistants.
+</p>
+<p align="center">
 
-Reusable RAG API backend for accurate AI assistants in education. Any institution can integrate via mobile, web, dashboards or other platforms.
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-API-000000?style=for-the-badge&logo=flask)
+![LangChain](https://img.shields.io/badge/LangChain-RAG-1C3C3C?style=for-the-badge)
+![ChromaDB](https://img.shields.io/badge/Chroma-Vector_DB-7B61FF?style=for-the-badge)
+![Groq](https://img.shields.io/badge/Groq-LLM-F55036?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-This project provides a backend API using retrieval-augmented generation (RAG) with vector embeddings. It helps deliver accurate responses from an institution's own content, addressing cases where generic AI produces inaccurate or low-productivity output.
+<br>
+
+![REST API](https://img.shields.io/badge/REST-API-0A66C2?style=flat-square)
+![Embeddings](https://img.shields.io/badge/Embeddings-HuggingFace-yellow?style=flat-square)
+![SQLite](https://img.shields.io/badge/SQLite-Conversation_History-003B57?style=flat-square&logo=sqlite)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Education](https://img.shields.io/badge/Built_for-Education-blueviolet?style=flat-square)
+![AI](https://img.shields.io/badge/AI-RAG-success?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/cleven12/edurag?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/cleven12/edurag?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/cleven12/edurag?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/cleven12/edurag?style=for-the-badge)
+
+</p>
 
 ## High-Level Flow
 
