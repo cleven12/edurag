@@ -1,5 +1,5 @@
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_chroma import Chroma
+from langchain_postgres import PGVector
 from langchain_groq import ChatGroq
 from langchain_classic.schema import HumanMessage, AIMessage, SystemMessage
 from dotenv import load_dotenv
@@ -7,6 +7,9 @@ import threading
 import os
 
 load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://edurag:edurag@localhost:5432/edurag")
+COLLECTION_NAME = "edurag_docs"
 
 # Lazy initialization for embeddings/retriever (heavy: avoids download on import)
 # This keeps fast imports in CI while initializing on first real chat call.
@@ -16,7 +19,12 @@ def get_retriever():
     global _retriever
     if _retriever is None:
         embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        vectorstore = Chroma(persist_directory="chroma_db", embedding_function=embeddings)
+        vectorstore = PGVector(
+            embeddings=embeddings,
+            collection_name=COLLECTION_NAME,
+            connection=DATABASE_URL,
+            use_jsonb=True,
+        )
         _retriever = vectorstore.as_retriever(search_kwargs={"k": 6})
     return _retriever
 

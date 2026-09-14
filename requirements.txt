@@ -6,11 +6,11 @@ beautifulsoup4
 langchain
 langchain-core
 langchain-classic
-langchain-chroma
+langchain-postgres
 langchain-groq
 langchain-huggingface
 langchain-text-splitters
-chromadb
+psycopg2-binary
 groq
 sentence-transformers
 gunicorn

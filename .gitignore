@@ -1,7 +1,10 @@
-chroma_db/
-conversations.db
 venv/
 __pycache__/
 app/__pycache__
 *.pyc
 .env
+
+# frontend
+frontend/node_modules/
+frontend/*.tsbuildinfo
+app/static/widget/
