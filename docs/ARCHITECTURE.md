@@ -15,12 +15,15 @@ flowchart TB
     end
 
     Content --> Ingest[Ingestion + Embeddings]
-    Ingest --> Vector[(Vector Store)]
+    Ingest --> Vector[(Postgres + pgvector)]
 
     subgraph edurag["edurag"]
+        Web[React/TS Chat Widget]
         API[API<br/>/chat]
         RAG[RAG Engine]
     end
+
+    Web --> API
 
     Vector --> RAG
     API --> RAG
@@ -47,9 +50,9 @@ flowchart TB
                                      ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                       Request Handling                       │
-│  routes.py: /chat, /health                                   │
+│  routes.py: /, /chat, /health                                │
 │    - extract message + optional session_id                   │
-│    - load history from SQLite                                │
+│    - load history from Postgres                              │
 │    - call chatbot.chat(...)                                  │
 │    - persist user + assistant messages                       │
 └─────────────────────────────────────────────────────────────┘
@@ -57,7 +60,7 @@ flowchart TB
                                      ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                     Chatbot (chatbot.py)                     │
-│  - Global: HuggingFaceEmbeddings + Chroma retriever (k=6)   │
+│  - Global: HuggingFaceEmbeddings + PGVector retriever (k=6) │
 │  - Per-thread: ChatGroq (llama-3.3-70b-versatile, t=0.3)    │
 │  - SYSTEM_PROMPT with institution persona                    │
 │  - Retrieval → context injection → history + question → LLM  │
@@ -66,9 +69,10 @@ flowchart TB
                     ┌────────────────┼────────────────┐
                     ▼                ▼                ▼
             ┌──────────────┐  ┌──────────┐   ┌─────────────┐
-            │   Chroma     │  │  Groq    │   │   SQLite    │
+            │   pgvector   │  │  Groq    │   │  Postgres   │
             │ (vector DB)  │  │  (LLM)   │   │ (chat hist) │
             └──────────────┘  └──────────┘   └─────────────┘
+                    (same Postgres instance)
 ```
 
 ## Core Modules
@@ -76,18 +80,21 @@ flowchart TB
 | Module         | Responsibility |
 |----------------|----------------|
 | `app/__init__.py` | Flask application factory. Registers blueprint. Sets CORS and secret key. |
-| `app/routes.py`   | Blueprint with `POST /chat` and `GET /health`. Calls init_db on every request. Generates session_id if absent. |
+| `app/routes.py`   | Blueprint with `GET /` (landing page + widget), `POST /chat`, and `GET /health`. Calls init_db on every request. Generates session_id if absent. |
 | `app/chatbot.py`  | RAG implementation. Module-level retriever and embeddings. Thread-local LLM. System prompt construction and LLM invocation. |
-| `app/db.py`       | SQLite wrapper. `messages` table (id, session_id, role, content, created_at). History limited to last 10 messages (reverse chronological on read, restored before LLM). |
-| `app/ingest.py`   | Offline data pipeline. Hardcoded list of 18 URLs. Scrapes, strips structural tags, splits (500/50 overlap), embeds, writes to Chroma. |
+| `app/db.py`       | Postgres wrapper (psycopg2). `messages` table (id, session_id, role, content, created_at). History limited to last 10 messages (reverse chronological on read, restored before LLM). |
+| `app/ingest.py`   | Offline data pipeline. Hardcoded list of 18 URLs. Scrapes, strips structural tags, splits (500/50 overlap), embeds, writes to pgvector (collection rebuilt on each run). |
+| `frontend/`       | React + TypeScript chat widget source, built with Vite straight into `app/static/widget/`. |
 | `run.py`          | Development server launcher. |
-| `docker-compose.yml` | Single web service. Mounts source + chroma_db volume. Uses .env file. |
+| `docker-compose.yml` | `db` (Postgres + pgvector) and `web` (Flask) services. Mounts source for live reload. Uses .env file. |
 | `Procfile`        | gunicorn invocation for platform deployments. |
 
 ## Data Stores
 
-- **Vector store**: `chroma_db/` directory (Chroma persistent). Contains embeddings + documents + metadata (source URL). Created exclusively by ingest.py.
-- **Conversation store**: `conversations.db` (SQLite). Per-session message log. No foreign keys or additional indexes beyond the implicit ones. `get_history` returns most recent N rows reversed to chronological order.
+Both the vector store and conversation history live in one Postgres database (via `DATABASE_URL`), provisioned as the `db` service in `docker-compose.yml` using the `pgvector/pgvector` image.
+
+- **Vector store**: pgvector collection `edurag_docs` (via `langchain-postgres`'s `PGVector`). Contains embeddings + documents + metadata (source URL). Created/rebuilt exclusively by `ingest.py` (`pre_delete_collection=True`).
+- **Conversation store**: `messages` table. Per-session message log, indexed on `(session_id, created_at)`. `get_history` returns most recent N rows reversed to chronological order.
 
 ## Chat Request Flow (Sequence)
 
@@ -98,9 +105,9 @@ sequenceDiagram
     participant F as Flask (routes)
     participant D as db.py
     participant B as chatbot.py
-    participant R as Retriever (Chroma)
+    participant R as Retriever (pgvector)
     participant L as LLM (ChatGroq)
-    participant S as SQLite
+    participant S as Postgres
 
     C->>F: POST /chat {message, session_id?}
     F->>D: init_db()  (idempotent)
@@ -131,8 +138,8 @@ flowchart TD
     D --> E[text = soup.get_text separator=\n]
     E --> F[RecursiveCharacterTextSplitter<br/>chunk_size=500, overlap=50]
     F --> G[create_documents with metadata source=URL]
-    G --> H[Chroma.from_documents<br/>all-MiniLM-L6-v2 embeddings]
-    H --> I[persist_directory=chroma_db]
+    G --> H[PGVector.from_documents<br/>all-MiniLM-L6-v2 embeddings]
+    H --> I[collection=edurag_docs, pre_delete_collection=True]
     I --> J[Process complete]
 ```
 
@@ -150,9 +157,9 @@ flowchart TD
 ## Concurrency Model
 
 - Flask run with `threaded=True` (development) and gunicorn (workers + threads) in production.
-- Embeddings and Chroma retriever are treated as read-only after module load.
+- Embeddings and pgvector retriever are treated as read-only after module load.
 - LLM instances are stored in `threading.local()` because `ChatGroq` is documented as non-thread-safe.
-- SQLite connections are created per operation (no connection pooling).
+- Postgres connections are opened and closed per operation (no connection pooling).
 
 ## Initialization Order (at import / first request)
 
@@ -170,8 +177,8 @@ All configuration is environment-driven. No config files or command-line flags b
 | Name            | Used by          | Default             | Notes |
 |-----------------|------------------|---------------------|-------|
 | GROQ_API_KEY    | chatbot.py       | (none)              | Required for ChatGroq |
+| DATABASE_URL    | db.py, chatbot.py, ingest.py | postgresql://edurag:edurag@localhost:5432/edurag | Postgres + pgvector connection |
 | SECRET_KEY      | app/__init__.py  | change-in-prod      | Flask signing |
-| DB_PATH         | db.py            | conversations.db    | SQLite file location |
 
 ## Non-Functional Characteristics (Observed)
 
@@ -179,7 +186,7 @@ All configuration is environment-driven. No config files or command-line flags b
 - No input sanitization beyond `.strip()` on message.
 - Error responses return raw exception strings on 500.
 - Ingest is not exposed via HTTP; it is a standalone CLI script.
-- Vector store and database are file-based and must be volume-mounted for persistence.
+- Vector store and conversation history live in the same Postgres instance and must be volume-mounted (or externally hosted) for persistence.
 - All scraping targets are static in source (no dynamic discovery or sitemap).
 
 ## Diagrams Summary
@@ -196,7 +203,7 @@ flowchart LR
         Flask
         subgraph "Module Globals"
             Emb[HuggingFaceEmbeddings]
-            VS[Chroma Vectorstore]
+            VS[PGVector Vectorstore]
             Retr[Retriever k=6]
         end
         subgraph "Thread Locals"

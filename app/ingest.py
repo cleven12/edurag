@@ -1,8 +1,12 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_chroma import Chroma
+from langchain_postgres import PGVector
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Example list of pages to ingest.
 # Replace these with the target educational institution's public pages
@@ -28,7 +32,8 @@ URLS = [
     "https://mwecau.ac.tz/research",
 ]
 
-CHROMA_PATH = "chroma_db"
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://edurag:edurag@localhost:5432/edurag")
+COLLECTION_NAME = "edurag_docs"
 
 def scrape(url):
     try:
@@ -66,19 +71,22 @@ def build_vectorstore():
         chunks.extend(splits)
 
     print(f"\nTotal chunks: {len(chunks)}")
-    print("Building ChromaDB vector store...")
+    print("Building pgvector store...")
 
     # Use local embeddings — no API key, no internet, free
     embeddings = HuggingFaceEmbeddings(
         model_name="all-MiniLM-L6-v2"  # ~80MB, downloads once
     )
 
-    vectorstore = Chroma.from_documents(
+    PGVector.from_documents(
         documents=chunks,
         embedding=embeddings,
-        persist_directory=CHROMA_PATH
+        collection_name=COLLECTION_NAME,
+        connection=DATABASE_URL,
+        use_jsonb=True,
+        pre_delete_collection=True,
     )
-    print("✓ Vector store built and saved to chroma_db/")
+    print(f"✓ Vector store built in Postgres (collection: {COLLECTION_NAME})")
 
 if __name__ == "__main__":
     build_vectorstore()

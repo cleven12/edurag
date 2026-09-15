@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 from .chatbot import chat
 from .db import save_message, get_history, init_db
 import uuid
@@ -8,6 +8,10 @@ bp = Blueprint("main", __name__)
 @bp.before_app_request
 def setup():
     init_db()
+
+@bp.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
 
 @bp.route("/chat", methods=["POST"])
 def chat_endpoint():
